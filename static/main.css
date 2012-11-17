@@ -1,0 +1,69 @@
+body { color:#555; text-shadow:0px 1px 0px #D1D1D1; font:12px/1.5 Microsoft YaHei,Tahoma,Helvetica,Arial,sans-serif;   margin:0;background:url("images/v2-bg.png")}
+.hidden { display:none; }
+.sep { height:10px;margin:10px; }
+
+/* header start */
+header { margin-bottom:24px;}
+#loginbar {background:url("images/loginbar.png");color:#666;font-weight:bold; height:26px; margin:0 auto;}
+#loginbar p { width:980px;font-size:12px; padding:6px 0 6px 0;  text-align:right; margin:0 auto;}
+#loginbar a { text-decoration:none; }
+
+#navbar {background:url("images/navbar.png"); height:80px;}
+#nav {width:980px; margin:0 auto;}
+#logo { float:left;font-size:50px;color:black; width:170; height:61px;text-decoration:none; vertical-align:center;}
+#navbarItems { float:right; width:700px; padding:14px 0px 15px 5px;overflow:hidden; }
+#navbarItems a {color:white;font-size:125%; text-decoration:none; }
+#navbarItems li{ float:right; padding:5px 12px 5px 12px; font-weight:bold; background:#777; margin:7px; list-style:none;}
+/* header end */
+
+#wrapper {width:980px; margin:0 auto; }
+
+#rightbar { float:right; width:270px; text-align:left; text-indent:0em; }
+#tagcloud { background:#EFEFEF url(images/v2-box.png) repeat-x 0 0; padding:15px; border-radius:5px;}
+#tagcloud h2 {margin:2px;}
+#tagcloud ul {padding-left:2px; }
+#tagcloud li {list-style:none; margin-top:2px; }
+#tagcloud a {text-decoration:none; color:white; font-weight:bold; background:#666; border-radius:9px; font-size:14px; padding:2px 6px 2px 6px;  }
+
+#content { position:relative; margin:0 auto; overflow:hidden; }
+.title {text-decoration:none; color:#636A86; }
+article { margin-right:5px; margin-bottom:5px;color:#555; text-shadow:0px 1px 0px #D1D1D1; font:14px/1.5 Microsoft YaHei,Tahoma,Helvetica,Arial,sans-serif; line-height:130%;text-indent:2em;background:#EFEFEF url(images/v2-box.png) repeat-x 0 0; padding:15px; border-radius:5px; width:670px; }
+/* postform start */
+#postform { margin-right:5px; margin-bottom:5px;color:#555; text-shadow:0px 1px 0px #D1D1D1; font:14px/1.5 Microsoft YaHei,Tahoma,Helvetica,Arial,sans-serif; line-height:130%;text-indent:2em;background:#EFEFEF url(images/v2-box.png) repeat-x 0 0; padding:15px; border-radius:5px; width:670px; }
+#postform textarea {width:560px; border-radius:5px; vertical-align:middle;}
+#postform label { width:70px; vertical-align:middle;}
+/* postform end */
+/* commentform start */
+article #commentform textarea { width:560px; border-radius:5px; vertical-align:middle;}
+article #commentform label { width:70px; vertical-align:middle;}
+/* commentform end */
+.article { height:auto;clear:both; position:relative; overflow:auto; }
+.article .menu { width:140px; background:white; overflow:hidden;float:right;text-align:left;padding:6px; text-indent:0;border:1px #666 solid;margin-bottom:14px;}
+.article .menu dl {margin:0;padding-left:3px; padding-top:7px; padding-bottom:7px;}
+.article .menu dd {margin-left:0px;padding-left:6px;  white-space:nowrap;line-height:21px; }
+.article .menu dd a{text-decoration:none;color:#636a86; font-size:14px;}
+.article .menu hr{margin:0;padding:0;}
+.article .menu h2{background:white;color:#666;border:none; padding-bottom:8px;font-size:20px; }
+.article h3 em { background:red;border:none;color:white;font-weight:600; text-shadow:none;}
+.article h2 { background:#9c0; line-height:25px; border:1px solid #666; color:black; text-indent:6px; font-size:16px; margin:0 0; }
+.summery .info {width:100%;}
+.summery .info .author {float:right; }
+.summery .do {width:100%;}
+.summery .do .tags {margin-right:-10px;float:left;vertical-align:middle;}
+.summery .do .tags a{text-decoration:none; color:#636a86;}
+.summery .do .ops { float:right; height:40px; padding-top:8px;vertical-align:middle;} 
+.summery .do .ops a { text-decoration:none; background:#777;float:bottom; padding:5px 16px 5px 16px; border-radius:19px; font-size:110%; color:white; }
+.summery .line {width:100%;float:bottom;clear:both;}
+.summery .line hr { width:100%; float:bottom; color:#33dd33;}
+.summery .title a{text-decoration:none; color:#636A86; }
+#PrevNext {  background:#EFEFEF url(images/v2-box.png) repeat-x 0 0;height:25px; border-radius:3px; width:670px;margin-bottom:5px;padding-left:15px;padding-right:15px;} 
+#PrevNext #Next {float:right;width:50px;margin:3px; }
+#PrevNext #Prev {float:left;width:50px;margin:3px; }
+#foot { background:url("images/foot.png"); height:122px;position:relative;}
+#ft { width:980px; margin:0 auto; text-align:left;}
+#contact {padding:20px 0 15px 0; line-height:18px; }
+#contact a{text-decoration:none; color:#373737;font-size:15px; padding:8px 20px 8px 0; }
+#ft #copyright {font-size:12px;float:bottom; margin-bottom:15px;}
+#ft #footlogo a{float:right;font-size:50px;color:black; width:170; height:61px;text-decoration:none; vertical-align:center;}
+
+
