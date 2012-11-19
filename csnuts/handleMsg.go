@@ -64,7 +64,7 @@ func handleMsg(w http.ResponseWriter, r *http.Request) {
     }
     // tagcloud
     tags:=new([]*Tag)
-	q:= datastore.NewQuery("Tag").Order("-Count").Limit(100)
+	q:= datastore.NewQuery("aTag").Order("-Count").Limit(100)
 	ks,err:=q.GetAll(c,tags)
 	if err != nil {
 		serveError(c, w, err)
@@ -91,7 +91,7 @@ func handleMsg(w http.ResponseWriter, r *http.Request) {
 
 func getMessage(r *http.Request,id int64) *Message {
 	c := appengine.NewContext(r)
-	k:=datastore.NewKey(c,"Message","",id,nil)
+	k:=datastore.NewKey(c,"aMessage","",id,nil)
     m:=new(Message)
 	if err:=datastore.Get(c,k,m);err!=nil {
         c.Errorf("%v",err)
@@ -103,7 +103,7 @@ func getMessage(r *http.Request,id int64) *Message {
 
 func putMessage(r *http.Request,id int64,m *Message) bool {
 	c := appengine.NewContext(r)
-	k:=datastore.NewKey(c,"Message","",id,nil)
+	k:=datastore.NewKey(c,"aMessage","",id,nil)
 	if _,err:=datastore.Put(c,k,m);err!=nil {
         c.Errorf("%v",err)
         return false
@@ -113,7 +113,7 @@ func putMessage(r *http.Request,id int64,m *Message) bool {
 
 func insertMessage(r *http.Request,m *Message) *datastore.Key {
 	c := appengine.NewContext(r)
-	if k, err := datastore.Put(c, datastore.NewIncompleteKey(c, "Message", nil), m); err != nil {
+	if k, err := datastore.Put(c, datastore.NewIncompleteKey(c, "aMessage", nil), m); err != nil {
 		return nil
 	}else {
         return k
@@ -162,7 +162,7 @@ func handleMsgDelete(w http.ResponseWriter, r *http.Request) {
 	    io.WriteString(w, "BadRequest")
         return
     }
-	k:=datastore.NewKey(c,"Message","",id,nil)
+	k:=datastore.NewKey(c,"aMessage","",id,nil)
     err=datastore.Delete(c,k)
     if err!=nil {
 	    w.WriteHeader(http.StatusNotFound)
@@ -170,6 +170,7 @@ func handleMsgDelete(w http.ResponseWriter, r *http.Request) {
 	    io.WriteString(w, "NotFound")
         return
     }
+    DecCount(w,r)
     w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 	io.WriteString(w, "OK")
@@ -184,9 +185,9 @@ func handleMsgQuery(w http.ResponseWriter, r *http.Request) {
 	c := appengine.NewContext(r)
 //	c.Errorf(r.URL.Path)
 	next,err:=strconv.Atoi(r.FormValue("next"))
-	q := datastore.NewQuery("Message").Order("-Date").Offset(next).Limit(10)
+	q := datastore.NewQuery("aMessage").Order("-Date").Offset(next).Limit(10)
 	var msgs []*Message
-	_, err = q.GetAll(c, &msgs)
+	ks, err:= q.GetAll(c, &msgs)
 	if err != nil {
 		serveError(c, w, err)
 		return
@@ -198,6 +199,9 @@ func handleMsgQuery(w http.ResponseWriter, r *http.Request) {
 /*	for _,m :=range msgs {
 		m.Content=strings.Replace(m.Content,"\n","<br>",-1)
 	}*/
+    for i,_:=range msgs {
+        msgs[i].ID=ks[i].IntID()
+    }
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	page,err:= template.ParseFiles("template/query.html","template/articles.html")
 	if(err!=nil) {

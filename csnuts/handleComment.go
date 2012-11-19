@@ -50,7 +50,7 @@ func handleComment(w http.ResponseWriter, r *http.Request) {
 		m.Author = u.String()
 	//TODO: hook this message under user's msglist
 	}
-	k,err:= datastore.Put(c, datastore.NewIncompleteKey(c, "Comment", nil), m)
+	k,err:= datastore.Put(c, datastore.NewIncompleteKey(c, "aComment", nil), m)
 	if err != nil {
 		serveError(c, w, err)
 		return
@@ -66,7 +66,7 @@ func handleComment(w http.ResponseWriter, r *http.Request) {
 
 func getComment(r *http.Request,id int64) *Comment {
 	c := appengine.NewContext(r)
-	k:=datastore.NewKey(c,"Comment","",id,nil)
+	k:=datastore.NewKey(c,"aComment","",id,nil)
     cmt:=new(Comment)
 	if err:=datastore.Get(c,k,cmt);err!=nil {
         c.Errorf("%v",err)
@@ -77,7 +77,7 @@ func getComment(r *http.Request,id int64) *Comment {
 
 func putComment(r *http.Request,id int64,cmt *Comment) bool {
 	c := appengine.NewContext(r)
-	k:=datastore.NewKey(c,"Comment","",id,nil)
+	k:=datastore.NewKey(c,"aComment","",id,nil)
 	if _,err:=datastore.Put(c,k,cmt);err!=nil {
         c.Errorf("%v",err)
         return false
@@ -87,7 +87,7 @@ func putComment(r *http.Request,id int64,cmt *Comment) bool {
 
 func insertComment(r *http.Request,cmt *Comment) *datastore.Key {
 	c := appengine.NewContext(r)
-	if k, err := datastore.Put(c, datastore.NewIncompleteKey(c, "Comment", nil), cmt); err != nil {
+	if k, err := datastore.Put(c, datastore.NewIncompleteKey(c, "aComment", nil), cmt); err != nil {
 		return nil
 	}else {
         return k

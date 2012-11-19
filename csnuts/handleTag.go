@@ -21,7 +21,7 @@ func putMsgTags(r *http.Request,id int64,tags []string) bool {
 	c := appengine.NewContext(r)
     for _,tagstring:=range tags {
         if tagstring!="" {
-	        k:=datastore.NewKey(c,"Tag",tagstring,0,nil)
+	        k:=datastore.NewKey(c,"aTag",tagstring,0,nil)
             tag:=new(Tag)
 	        datastore.Get(c,k,tag)// whatever it returns, don't care
             tag.IDs=append(tag.IDs,id)
@@ -37,7 +37,7 @@ func putMsgTags(r *http.Request,id int64,tags []string) bool {
 
 func getIDsByTag(r *http.Request,tagstring string) []int64 {
 	c := appengine.NewContext(r)
-    k:=datastore.NewKey(c,"Tag",tagstring,0,nil)
+    k:=datastore.NewKey(c,"aTag",tagstring,0,nil)
     tag:=new(Tag)
     if err:=datastore.Get(c,k,tag);err!=nil {
         c.Errorf("%v",err)
@@ -70,7 +70,7 @@ func handleTaggedMsgs(w http.ResponseWriter, r * http.Request) {
     pageData.Msgs=handleTagQueryReturn(w,r,tagstring,0)
     // tagcloud
     tags:=new([]*Tag)
-	q := datastore.NewQuery("Tag").Order("-Count").Limit(100)
+	q := datastore.NewQuery("aTag").Order("-Count").Limit(100)
 	ks, err := q.GetAll(c, tags)
 	if err != nil {
 		serveError(c, w, err)

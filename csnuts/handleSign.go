@@ -17,6 +17,11 @@ func handleSign(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	c := appengine.NewContext(r)
+	u:=user.Current(c)
+	if u==nil {
+        badRequest(w)
+        return
+    }
 	if err := r.ParseForm(); err != nil {
 		serveError(c, w, err)
 		return
@@ -42,7 +47,7 @@ func handleSign(w http.ResponseWriter, r *http.Request) {
 		m.Author = u.String()
 	//TODO: hook this message under user's msglist
 	}
-    k, err := datastore.Put(c, datastore.NewIncompleteKey(c, "Message", nil), m)
+    k, err := datastore.Put(c, datastore.NewIncompleteKey(c, "aMessage", nil), m)
 	if err != nil {
 		serveError(c, w, err)
 		return

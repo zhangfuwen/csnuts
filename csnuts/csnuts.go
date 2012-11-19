@@ -17,7 +17,7 @@ import (
 
 const lenSummery=1370
 //var Site string="http://www.csnuts.com"
-var Site string="http://localhost:8080"
+var Site string="http://www.csnuts.com"
 
 type TagCount struct {
         TagName string
@@ -65,7 +65,7 @@ func handleMainPage(w http.ResponseWriter, r *http.Request) {
 		url,_:=user.LogoutURL(c,"/")
 		pageData.Loginbar="欢迎,"+u.String()+"(<a href=\""+url+"\">登出</a>)"
 	}
-	q := datastore.NewQuery("Message").Order("-Date").Limit(10)
+	q := datastore.NewQuery("aMessage").Order("-Date").Limit(10)
 	ks, err := q.GetAll(c, &(pageData.Msgs))
 	if err != nil {
 		serveError(c, w, err)
@@ -78,7 +78,7 @@ func handleMainPage(w http.ResponseWriter, r *http.Request) {
     }
     // tagcloud
     tags:=new([]*Tag)
-	q = datastore.NewQuery("Tag").Order("-Count").Limit(100)
+	q = datastore.NewQuery("aTag").Order("-Count").Limit(100)
 	ks, err = q.GetAll(c, tags)
 	if err != nil {
 		serveError(c, w, err)
