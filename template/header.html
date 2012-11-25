@@ -7,7 +7,8 @@
     <title>计算机科学坚果会</title>
     <script src="/static/js/jquery-1.8.0.js"></script>
     <link rel="stylesheet" href="/static/main.css" type="text/css">
-    <!--script src="/static/js/csnuts.js"></script-->
+    <link rel="stylesheet" href="/static/js/prettify/prettify.css" type="text/css">
+    <script src="/static/js/prettify/prettify.js"></script>
     <script type="text/javascript">
         $(window).load(function(){
             $("img").each(function() {
@@ -15,6 +16,10 @@
                     $(this).width("95%");
                 }
             });
+        });
+        $(window).load(function(){
+            $("pre > br").remove();
+            prettyPrint();
         });
     </script>
     <script type="text/javascript">

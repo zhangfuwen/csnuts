@@ -201,6 +201,7 @@ func handleMsgQuery(w http.ResponseWriter, r *http.Request) {
 	}*/
     for i,_:=range msgs {
         msgs[i].ID=ks[i].IntID()
+        msgs[i].Content=[]byte(SubstrByByte(string(msgs[i].Content),lenSummery))
     }
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	page,err:= template.ParseFiles("template/query.html","template/articles.html")

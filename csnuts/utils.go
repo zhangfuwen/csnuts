@@ -63,8 +63,30 @@ func processMsgContent(m *Message) {
     reH2,_:=regexp.Compile("^\\s*?==([\\s\\S]*?)==\\s*?$")
     reImg,_:=regexp.Compile("^\\s*?@@([\\s\\S]*?)@@\\s*?$")
     reLink,_:=regexp.Compile("^\\s*?@([\\s\\S]*?)@\\s*?$")
+    //reCode,_:=regexp.Compile("^[code]$")
+    //reEndCode,_:=regexp.Compile("^[/code]$")
     menuItems:=make([]string,0,10)
+//    var pre bool
+//    var codeStart int
+//    pre=false
     for index,_:=range lines {
+        //code
+        /* decided to make it simple
+        if reCode.MatchString(line[index]) {
+            pre=true
+            codeStart=index
+            continue
+        }
+        if reEndCode.MatchString(line[index]) {
+            if pre==false {
+                continue
+            }
+            pre=false
+            line[codeStart]="<pre>"
+            line[index]="</pre>"
+            continue
+        }
+        */
         // H3 
         item:=reH3.FindString(lines[index])
         if item!="" {
@@ -86,25 +108,31 @@ func processMsgContent(m *Message) {
         item=reImg.FindString(lines[index])
         if item!="" {
             item=strings.TrimSpace(strings.Replace(item,"@","",-1))
-            lines[index]="<img src=\""+item+"\" />"
+            lines[index]="<div class=\"m\"><img src=\""+item+"\" /></div><br/>"
             continue
         }
         //Link
         item=reLink.FindString(lines[index])
         if item!="" {
             item=strings.TrimSpace(strings.Replace(item,"@","",-1))
-            lines[index]="<a href=\""+item+"\" target=\"_blank\">"+item+"</a>"
+            lines[index]="<a href=\""+item+"\" target=\"_blank\">"+item+"</a><br/>"
             continue
         }
         // P
-        lines[index]="<p>"+lines[index]+"</p>"
+        lines[index]=lines[index]+"<br/>"
     }
     m.Content=[]byte(strings.Join(lines,""))
     m.Menus=menuItems
     //BBcode
-	m.Content=[]byte(strings.Replace(string(m.Content),"\n","<br>",-1))
+	m.Content=[]byte(strings.Replace(string(m.Content),"\n","<br/>",-1))
+	m.Content=[]byte(strings.Replace(string(m.Content),"[code]","<pre class=\"prettyprint\">",-1))
+	m.Content=[]byte(strings.Replace(string(m.Content),"[/code]","</pre>",-1))
 	m.Content=[]byte(strings.Replace(string(m.Content),"[h2]","<h2>",-1))
 	m.Content=[]byte(strings.Replace(string(m.Content),"[/h2]","</h2>",-1))
+	m.Content=[]byte(strings.Replace(string(m.Content),"[swf]","<div class=\"m\"><embed width=\"480\" height=\"450\" type=\"application/x-shockwave-flash\" allowfullscreen=\"true\" wmode=\"transparent\" src=\"",-1))
+	m.Content=[]byte(strings.Replace(string(m.Content),"[flv]","<div class=\"m\"><embed width=\"610\" type=\"application/x-shockwave-flash\" allowfullscreen=\"true\" wmode=\"transparent\" src=\"",-1))
+	m.Content=[]byte(strings.Replace(string(m.Content),"[/swf]","\"></div><br/>",-1))
+	m.Content=[]byte(strings.Replace(string(m.Content),"[/flv]","\"></div><br/>",-1))
     //BBcode end 
 }
 

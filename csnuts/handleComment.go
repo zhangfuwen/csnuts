@@ -41,7 +41,8 @@ func handleComment(w http.ResponseWriter, r *http.Request) {
 		Bad:     0,
 	}
     if badAuthor(m.Author)|| badComment(m.Content) {
-        badRequest(w)
+        badRequest(w,"你的输入长度不符合要求")
+        return
     }
     processCmtContent(m)
 

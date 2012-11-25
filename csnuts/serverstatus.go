@@ -11,10 +11,10 @@ func serve404(w http.ResponseWriter) {
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 	io.WriteString(w, "Not Found")
 }
-func badRequest(w http.ResponseWriter) {
+func badRequest(w http.ResponseWriter,s string ) {
 	w.WriteHeader(http.StatusBadRequest)
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
-	io.WriteString(w, "Bad Request")
+	io.WriteString(w, "Bad Request:"+s)
 }
 
 func serveError(c appengine.Context, w http.ResponseWriter, err error) {
