@@ -129,8 +129,8 @@ func processMsgContent(m *Message) {
 	m.Content=[]byte(strings.Replace(string(m.Content),"[/code]","</pre>",-1))
 	m.Content=[]byte(strings.Replace(string(m.Content),"[h2]","<h2>",-1))
 	m.Content=[]byte(strings.Replace(string(m.Content),"[/h2]","</h2>",-1))
-	m.Content=[]byte(strings.Replace(string(m.Content),"[swf]","<div class=\"m\"><embed width=\"610\" type=\"application/x-shockwave-flash\" allowfullscreen=\"true\" wmode=\"transparent\" src=\"",-1))
-	m.Content=[]byte(strings.Replace(string(m.Content),"[flv]","<div class=\"m\"><embed width=\"610\" type=\"application/x-shockwave-flash\" allowfullscreen=\"true\" wmode=\"transparent\" src=\"",-1))
+	m.Content=[]byte(strings.Replace(string(m.Content),"[swf]","<div class=\"m\"><embed width=\"610\" height=\"498\" type=\"application/x-shockwave-flash\" allowfullscreen=\"true\" wmode=\"transparent\" src=\"",-1))
+	m.Content=[]byte(strings.Replace(string(m.Content),"[flv]","<div class=\"m\"><embed width=\"610\" height=\"498\" type=\"application/x-shockwave-flash\" allowfullscreen=\"true\" wmode=\"transparent\" src=\"",-1))
 	m.Content=[]byte(strings.Replace(string(m.Content),"[/swf]","\"></div><br/>",-1))
 	m.Content=[]byte(strings.Replace(string(m.Content),"[/flv]","\"></div><br/>",-1))
     //BBcode end 
