@@ -1,0 +1,34 @@
+{{define "Articles" }}
+            <div id="articles">
+            {{range .}}
+                <article class="summery">
+                    <h1 class="title"><a href="/msg/?id={{.ID}}" target="_blank">{{.Title}}</a></h1>
+                    <div class="article">
+                        {{with .Menus }}
+                        <div class="menu">
+                            <h2>目录</h2>
+                            <hr>
+                            <dl>{{range $menu:=.}}<dd>{{$menu}}</dd>{{ end}}</dl>
+                        </div>
+                        {{end}}
+                        {{.Content}}</p>
+                    </div>
+                    <div class="info">
+                        <div class="author"> {{with .Author}} {{.|html}} {{else}}匿名用户{{end}}</div>
+                        <div class="date"> {{.Date.Format  "2006-01-02 03:04PM"}} </div>
+                    </div>
+                    <div class="do">
+                        <div class="tags">标签：{{range .Tags}}{{if . }}<a href="/tag/?tag={{.}}" target="_blank">{{.}}</a>,&nbsp;{{end}}{{end}} 
+                        </div>
+                        <div class="ops">
+                            <a href="javascript:Good({{.ID}});"><span id="{{.ID}}">{{.Good}}</span><img src="static/images/ding.gif" alt="ding"></img>我顶啊！</a>
+                            <a href="/msg/?id={{.ID}}" target="_blank">详细内容>></a>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <hr>
+                    </div>
+                </article>
+                {{end}}
+            </div>
+{{end}}

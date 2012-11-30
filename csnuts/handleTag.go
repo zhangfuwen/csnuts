@@ -59,10 +59,10 @@ func handleTaggedMsgs(w http.ResponseWriter, r * http.Request) {
     pageData.U=u
 	if u==nil {
 		url,_:=user.LoginURL(c,"/")
-		pageData.Loginbar="<a href=\""+url+"\">登入</a>"
+		pageData.Loginbar="<a href=\""+url+"\">Login with google</a>"
 	} else {
 		url,_:=user.LogoutURL(c,"/")
-		pageData.Loginbar="欢迎,"+u.String()+"(<a href=\""+url+"\">登出</a>)"
+		pageData.Loginbar="Welcome,"+u.String()+"(<a href=\""+url+"\">Logout</a>)"
 	}
     tagstring:=r.FormValue("tag")
     pageData.Tag=tagstring
@@ -88,7 +88,7 @@ func handleTaggedMsgs(w http.ResponseWriter, r * http.Request) {
     }
     pageData.Arts=Msgs2Arts(pageData.Msgs)
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-	tagPage,err:= template.ParseFiles("template/msglist.html","template/articles.html","template/header.html","template/footer.html")
+	tagPage,err:= template.ParseFiles(templatePath+"msglist.html",templatePath+"articles.html",templatePath+"header.html",templatePath+"footer.html")
 	if(err!=nil) {
 		c.Errorf("%v", err)
 		return
@@ -120,7 +120,7 @@ func GetTaggedMsgs(w http.ResponseWriter, r * http.Request) {
     }
     pageData.Arts=Msgs2Arts(pageData.Msgs)
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-	tagPage,err:= template.ParseFiles("template/msglist.html","template/articles.html","template/headertag.html","template/footer.html")
+	tagPage,err:= template.ParseFiles(templatePath+"msglist.html",templatePath+"articles.html",templatePath+"headertag.html",templatePath+"footer.html")
 	if(err!=nil) {
 		c.Errorf("%v", err)
 		return
@@ -174,7 +174,7 @@ func handleTagQuery(w http.ResponseWriter, r *http.Request) {
 		m.Content=strings.Replace(m.Content,"\n","<br>",-1)
 	}*/
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-	page,err:= template.ParseFiles("template/query.html","template/articles.html")
+	page,err:= template.ParseFiles(templatePath+"query.html",templatePath+"articles.html")
 	if(err!=nil) {
 		c.Errorf("%v", err)
 		return

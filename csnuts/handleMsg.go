@@ -30,10 +30,10 @@ func handleMsg(w http.ResponseWriter, r *http.Request) {
     pageData.U=u
 	if u==nil {
 		url,_:=user.LoginURL(c,"/")
-		pageData.Loginbar="<a href=\""+url+"\">登入</a>"
+		pageData.Loginbar="<a href=\""+url+"\">Login with google</a>"
 	} else {
 		url,_:=user.LogoutURL(c,"/")
-		pageData.Loginbar="欢迎,"+u.String()+"(<a href=\""+url+"\">登出</a>)"
+		pageData.Loginbar="Welcome,"+u.String()+"(<a href=\""+url+"\">Logout</a>)"
 	}
 
 	id,err:=strconv.ParseInt(r.FormValue("id"),0,64)
@@ -78,7 +78,7 @@ func handleMsg(w http.ResponseWriter, r *http.Request) {
     }
     //end tagcloud
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-	msgPage,err:= template.ParseFiles("template/msg.html")
+	msgPage,err:= template.ParseFiles(templatePath+"msg.html")
 	if(err!=nil) {
 		c.Errorf("%v", err)
 		return
@@ -204,7 +204,7 @@ func handleMsgQuery(w http.ResponseWriter, r *http.Request) {
         msgs[i].Content=[]byte(SubstrByByte(string(msgs[i].Content),lenSummery))
     }
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-	page,err:= template.ParseFiles("template/query.html","template/articles.html")
+	page,err:= template.ParseFiles(templatePath+"query.html",templatePath+"articles.html")
 	if(err!=nil) {
 		c.Errorf("%v", err)
 		return

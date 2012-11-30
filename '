@@ -18,7 +18,7 @@ import (
 const lenSummery=1370
 //var Site string="http://www.csnuts.com"
 var Site string="http://www.csnuts.com"
-var templatePath string="template/en/"
+var templatePath string="template/cn/"
 
 type TagCount struct {
         TagName string
@@ -47,7 +47,6 @@ type articlePage struct {
     Cmts []*Comment
     TagCloud []*TagCount
 }
-
 func handleMainPage(w http.ResponseWriter, r *http.Request) {
 	var pageData listPage
     pageData.SiteBase=Site
@@ -95,7 +94,7 @@ func handleMainPage(w http.ResponseWriter, r *http.Request) {
     //end tagcloud
     pageData.Arts=Msgs2Arts(pageData.Msgs)
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-	mainPage,err:= template.ParseFiles(templatePath+"msglist.html",templatePath+"articles.html",templatePath+"header.html",templatePath+"footer.html")
+	mainPage,err:= template.ParseFiles("template/msglist.html","template/articles.html","template/header.html","template/footer.html")
 	if(err!=nil) {
 		c.Errorf("%v", err)
 		return
@@ -106,7 +105,8 @@ func handleMainPage(w http.ResponseWriter, r *http.Request) {
 }
 
 func init() {
-
+    //http.HandleFunc("/tag/good/",handleMsgGood)
+//    http.HandleFunc("/msg/good/",handleMsgGood)
 	http.HandleFunc("/", handleMainPage)
 	http.HandleFunc("/sign", handleSign)
     http.HandleFunc("/comment",handleComment)

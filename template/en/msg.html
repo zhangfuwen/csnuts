@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html lang="cn">
+<head>
+<meta charset="utf-8"/>
+<title>CS NUTS</title>
+<script src="/static/js/jquery-1.8.0.js"></script>
+<link rel="stylesheet" href="/static/main.css" type="text/css">
+<script type="text/javascript">
+//good
+function Good(msgid) {
+    $.ajax({
+    url:"/good/?id="+msgid,
+    success:function(htmlobj) {
+                    var good=$("#"+msgid).text();
+                    good++;
+                    $("#"+msgid).text(good);
+				},
+    error:function(htmlobj){}});
+}
+//end good
+//delete
+function Del(msgid) {
+    $.ajax({
+    url:"/del/?id="+msgid,
+    success:function(htmlobj) {
+            document.location.href="/";
+				},
+    error:function(htmlobj){
+        alert("Bad Request");
+    }});
+}
+//delete
+function ResizeTextarea(id) {
+	var t=document.getElementById(id);
+	var h=t.scrollHeight;
+	h=h>110?465:100;
+	t.style.height=h+"px";
+}
+</script>
+
+</head>
+<body>
+<header>
+<div id="loginbar"><p>{{.Loginbar}}</p></div>
+{{$u:=.U}}
+<div id="navbar">
+<div id="nav">
+<a id="logo" href="/" >CS NUTS</a>
+<div id="navbarItems">
+<nav>
+<li><a href="/tag/?tag=cpp">cpp</a></li>
+<li><a href="/tag/?tag=java">java</a></li>
+<li><a href="/tag/?tag=golang">golang</a></li>
+<li><a href="/tag/?tag=golang">ask</a></li>
+<li><a href="/tag/?tag=feature">feature</a></li>
+</nav>
+</div>
+</div>
+</div>
+</header>
+
+<div id="wrapper">
+<div id="rightbar">
+<div id="tagcloud">
+<h2>Tag Cloud</h2>
+<hr>
+<ul>
+{{ range .TagCloud }}
+<a href="/tag/?tag={{.TagName}}" target="_blank">{{.TagName}}</a>
+{{end}}
+</ul>
+</div>
+</div>
+
+<!-- content start -->
+<div id="content">
+
+<article class="summery">
+<h1 class="title">{{.Art.Title}}</h1>
+<div class="authdate"> {{with .Art.Author}} {{.|html}} {{else}}Anonymous user{{end}} posted at{{.Art.Date.Format "2006-01-02 23:4: PM"}} </div>
+<hr>
+<div class="article">
+{{with .Art.Menus }}
+<div class="menu">
+<h2>Menu</h2>
+<hr>
+<dl>{{range $menu:=.}} <dd>{{$menu}}</dd> {{ end}}</dl></div>
+{{end}}
+{{.Art.Content}}</p>
+</div>
+<div class="do">
+<div class="tags">Tags:{{range .Art.Tags}}{{if . }}<a href="tag/?tag={{.}}" target="_blank">{{.}}</a>,&nbsp;{{end}}{{end}} </div>
+<div class="ops">
+{{if .IsAdmin }}<a href="javascript:Del({{.Art.ID}});">Delete</a>{{end}}
+<a href="javascript:Good({{.Art.ID}});"><span id="{{.Art.ID}}">{{.Art.Good}}</span><img src="../static/images/ding.gif" alt="ding"></img>Good!</a>
+</div>
+</div>
+<div class="line">
+<hr>
+</div>
+<!--comment-->
+<div id="commentform">
+<form action="/comment" method="post">
+	<div class="textinput"><label>Cntnt(200):</label><textarea id="newcmt" name="content" onpropertychange="ResizeTextarea('newcmt')" oninput="ResizeTextarea('newcmt')" onkeyup="ResizeTextarea('newcmt')" ></textarea></div>
+    {{with $u}} {{else}}
+    <div class="textinput"><label>Author(50B):</label><textarea name="newauthor" rows="1" ></textarea></div>
+    {{end}}
+	<div class="hidden"><label>id:</label><textarea name="cmtid" rows="1" >{{.Art.ID}}</textarea>
+    </div>
+	<div id="submit" ><input id="butsubmit" type="submit" value="Comment"></div>
+</form>
+</div>
+<!--end comment-->
+</article>
+{{range .Cmts}}
+<article class="summery">
+<div class="article">
+{{with .Menus }}
+<div class="menu">
+<h2>Menu</h2>
+<hr>
+<dl>{{range $menu:=.}}<dd>{{$menu}}</dd>{{ end}}</dl></div>
+{{end}}
+{{.Content}}</p>
+</div>
+<div class="author"> {{with .Author}} {{.|html}} {{else}}Anonymous visitor{{end}}</div>
+<div class="date"> {{.Date.Format  "2006-01-02 23:4: PM"}} </div>
+<hr>
+</article>
+{{end}}
+
+
+</div>
+<!-- end content -->
+</div> <!--end wrapper-->
+<footer>
+<div id="foot">
+<div id="ft">
+<div id="footlogo">
+<a href="/" >CS NUTS</a>
+</div>
+<div id="contact">
+<a href="#" target="_blank">Computer Science Nuts</a>
+<a href="#" target="_blank">Post</a>
+<a href="#" target="_blank">Mobile</a>
+<a href="#" target="_blank">Site Map</a>
+<a href="#" target="_blank">Contact</a>
+<a href="#" target="_blank">About us</a>
+</div>
+<div id="copyright">Computer Science Nuts(WWW.CSNUTS.COM)<br>
+Copyright ©  2012-2112 CSNUTS, All rights reserved.<br>
+Powered by CSNUTS.COM</div>
+</div>
+</div>
+</footer>
+</body>
+</html>

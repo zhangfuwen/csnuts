@@ -19,7 +19,7 @@ func handleSign(w http.ResponseWriter, r *http.Request) {
 	c := appengine.NewContext(r)
 	u:=user.Current(c)
 	if u==nil {
-        badRequest(w,"只有登陆用户才可以发表内容,游客可以发表评论。")
+        badRequest(w,"Only login user can post messages.")
         return
     }
 	if err := r.ParseForm(); err != nil {
@@ -39,7 +39,7 @@ func handleSign(w http.ResponseWriter, r *http.Request) {
 		Bad:     0,
 	}
     if badTitle(m.Title) || badAuthor(m.Author) || badContent(string(m.Content)) || badTag(tagsString) {
-        badRequest(w,"您的输入长度不符合规定")
+        badRequest(w,"Input too long")
         return
     }
 
