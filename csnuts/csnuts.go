@@ -18,7 +18,7 @@ import (
 const lenSummery=1370
 //var Site string="http://www.csnuts.com"
 var Site string="http://www.csnuts.com"
-var templatePath string="template/en/"
+var templatePath string="template/cn/"
 
 type TagCount struct {
         TagName string
