@@ -18,10 +18,20 @@ func handleSign(w http.ResponseWriter, r *http.Request) {
 	}
 	c := appengine.NewContext(r)
 	u:=user.Current(c)
-	if u==nil {
-        badRequest(w,"Only login user can post messages.")
-        return
-    }
+	userName:=""
+	if u!=nil {//a google user
+		userName=u.String()
+    }else{//not a google user
+		//is it a local user?
+		cookie,err:=r.Cookie("email") 
+		if err==nil {
+			userName=cookie.Value
+		}else{//no logged in yet
+
+			badRequest(w,"Only login user can post messages.")
+			return
+		}
+	}
 	if err := r.ParseForm(); err != nil {
 		serveError(c, w, err)
 		return
@@ -46,7 +56,7 @@ func handleSign(w http.ResponseWriter, r *http.Request) {
     processMsgContent(m)
 	//TODO: build References and Referedby list
 	if u := user.Current(c); u != nil {
-		m.Author = u.String()
+		m.Author = userName
 	//TODO: hook this message under user's msglist
 	}
     k, err := datastore.Put(c, datastore.NewIncompleteKey(c, "aMessage", nil), m)

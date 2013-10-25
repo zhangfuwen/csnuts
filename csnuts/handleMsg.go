@@ -13,6 +13,7 @@ import (
 func handleMsg(w http.ResponseWriter, r *http.Request) {
 	var pageData articlePage
     pageData.SiteBase=Site
+    pageData.QueryBase=Site+"/query/?"
     pageData.CurrPageBase=Site+"/msg/"
 	if r.Method != "GET" || r.URL.Path != "/" {
 //		serve404(w)
@@ -78,7 +79,9 @@ func handleMsg(w http.ResponseWriter, r *http.Request) {
     }
     //end tagcloud
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-	msgPage,err:= template.ParseFiles(templatePath+"msg.html")
+	msgPage,err:= template.ParseFiles(templatePath+"msg.html",
+										templatePath+"header.html",
+										templatePath+"footer.html")
 	if(err!=nil) {
 		c.Errorf("%v", err)
 		return

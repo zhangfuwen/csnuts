@@ -1,4 +1,4 @@
-body { color:#555; text-shadow:0px 1px 0px #D1D1D1; font:12px/1.5 Microsoft YaHei,Tahoma,Helvetica,Arial,sans-serif;   margin:0;}
+body { color:#555; text-shadow:0px 1px 0px #D1D1D1; font:100% Microsoft YaHei,Tahoma,Helvetica,Arial,sans-serif;   margin:0;}
 .hidden { display:none; }
 .sep { height:10px;margin:10px; }
 .m { width:610px; margin:0 auto; text-indent:0 }
@@ -8,19 +8,20 @@ pre { background:#FBF9EA; border:1px solid #E2E105; padding:10px; }
 header { margin-bottom:24px;}
 #loginbar {color:#666;font-weight:bold; height:26px; margin:0 auto;}
 #loginbar p { width:98%;font-size:12px; padding:6px 0 6px 0;  text-align:right; margin:0 auto;}
-#loginbar a { text-decoration:none; }
+#loginbar a { text-decoration:none; padding:0px 5px; }
 
-#navbar { height:80px;}
-#nav {width:98%; margin:0 auto;}
+#navbar {width:98%; margin:0 auto;}
 #logo { float:left;font-size:35px;color:black; width:170; height:61px;text-decoration:none; vertical-align:center;}
 #navbarItems { float:right; padding:14px 0px 15px 5px;overflow:hidden; }
 #navbarItems a {color:white;font-size:125%; text-decoration:none; }
 #navbarItems li{ float:right; padding:5px 12px 5px 12px; font-weight:bold; background:#777; margin:7px; list-style:none;}
+.clear { clear:both; }
 /* header end */
 
 #wrapper { margin:0 auto; }
 
 #rightbar { float:right; width:270px; text-align:left; text-indent:0em; }
+#rightbar { display:none; } /* don't display rightbar, msg.html*/
 #tagcloud {  padding:15px; border-radius:2px;}
 #tagcloud h2 {margin:2px;}
 #tagcloud ul {padding-left:2px; }
@@ -29,25 +30,25 @@ header { margin-bottom:24px;}
 
 #content { position:relative; margin:0 auto; overflow:hidden; }
 .title {text-decoration:none; color:#636A86; }
-article { margin-right:5px; margin-bottom:5px;color:#555; text-shadow:0px 1px 0px #D1D1D1; font:14px/1.5 Microsoft YaHei,Tahoma,Helvetica,Arial,sans-serif; line-height:130%;padding:15px; border-radius:5px; }
+article { margin-right:5px; margin-bottom:5px;color:#555; text-shadow:0px 1px 0px #D1D1D1; font:100% Microsoft YaHei,Tahoma,Helvetica,Arial,sans-serif; line-height:130%;padding:15px; border-radius:5px; }
 /* postform start */
-#postform { margin-right:5px; margin-bottom:5px;color:#555; text-shadow:0px 1px 0px #D1D1D1; font:14px/1.5 Microsoft YaHei,Tahoma,Helvetica,Arial,sans-serif; line-height:130%;text-indent:2em;padding:15px; border-radius:5px;  }
-#postform textarea {width:88%; vertical-align:middle;}
-#postform label { width:70px; vertical-align:middle;}
+#postform { margin-right:5px; margin-bottom:5px;color:#555; text-shadow:0px 1px 0px #D1D1D1; font:100% Microsoft YaHei,Tahoma,Helvetica,Arial,sans-serif; line-height:130%;padding:15px; border-radius:5px;  }
+#postform textarea,input {width:98%; vertical-align:middle;}
+#postform  label { width:98px;float:left; vertical-align:middle;}
+#postform  button { width:60px; }
+#commentform textarea,input {width:98%; vertical-align:middle;}
+#commentform  label { width:98px;float:left; vertical-align:middle;}
+#commentform  button { width:100px; }
 /* postform end */
-/* commentform start */
-article #commentform textarea { width:560px; border-radius:5px; vertical-align:middle;}
-article #commentform label { width:70px; vertical-align:middle;}
-/* commentform end */
 .article { height:auto;clear:both; position:relative; overflow:auto; }
-.article .menu { width:200px; background:white; overflow:hidden;margin-right:14px; float:right;text-align:left;padding:6px; text-indent:0;border:1px #666 solid;margin-bottom:14px;}
+.article .menu { background:white; overflow:hidden;margin-right:14px; text-align:left;padding:6px; text-indent:0;border:1px #666 solid;margin-bottom:14px;}
 .article .menu dl {margin:0;padding-left:3px; padding-top:7px; padding-bottom:7px;}
 .article .menu dd {margin-left:0px;padding-left:6px;  white-space:nowrap;line-height:21px; }
-.article .menu dd a{text-decoration:none;color:#636a86; font-size:14px;}
+.article .menu dd a{text-decoration:none;color:#636a86; font-size:100%;}
 .article .menu hr{margin:0;padding:0;}
-.article .menu h2{background:white;color:#666;border:none; padding-bottom:8px;font-size:20px; }
+.article .menu h2{background:white;color:#666;border:none; padding-bottom:8px;font-size:1.5em; }
 .article h3 em { background:red;border:none;color:white;font-weight:600; text-shadow:none;}
-.article h2 { background:#9c0; line-height:25px; border:1px solid #666; color:black; font-size:16px; margin:0 0; }
+.article h2 { background:#9c0; line-height:25px; border:1px solid #666; color:black; font-size:1.5em; margin:0 0; }
 .summery .info {width:100%;height:25px;}
 .summery .info .author {float:right; }
 .summery .info .date {float:left; }
@@ -65,8 +66,8 @@ article #commentform label { width:70px; vertical-align:middle;}
 #foot { height:122px;position:relative;}
 #ft { width:98%; margin:0 auto; text-align:left;}
 #contact {padding:20px 0 15px 0; line-height:18px; }
-#contact a{text-decoration:none; color:#373737;font-size:15px; padding:8px 20px 8px 0; }
-#ft #copyright {font-size:12px;float:bottom; margin-bottom:15px;}
-#ft #footlogo a{float:right;font-size:50px;color:black; width:170; height:61px;text-decoration:none; vertical-align:center;}
+#contact a{text-decoration:none; color:#373737;font-size:1.2em; padding:8px 20px 8px 0; }
+#ft #copyright {font-size:100%;float:bottom; margin-bottom:15px;}
+#ft #footlogo a{float:right;font-size:400%;color:black; width:170; height:61px;text-decoration:none; vertical-align:center;}
 
 

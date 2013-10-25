@@ -97,10 +97,15 @@
             h=h>110?465:100;
             t.style.height=h+"px";
         }
+		//展示登陆框
+		function showLogin() {
+			$("#login_window").innerHTML('<div >adfasdfasdf</div>');
+		}
     </script>
 </head>
 
 <body>
+	<frame id="login_window" src="login.html" height="100px" width="800px"></frame>
     <header>
         <div id="loginbar"><p>{{.Loginbar}}</p>
         </div>

@@ -9,6 +9,7 @@ import (
 	"net/http"
 	"text/template"
 //	"strconv"
+//"fmt"
 	"appengine"
 	"appengine/datastore"
 	"appengine/user"
@@ -42,6 +43,7 @@ type articlePage struct {
     Loginbar string
     SiteBase string
     CurrPageBase string
+    QueryBase string
     Msg *Message
     Art *Article
     Cmts []*Comment
@@ -53,16 +55,22 @@ func handleMainPage(w http.ResponseWriter, r *http.Request) {
     pageData.SiteBase=Site
     pageData.QueryBase=Site+"/query/?"
 	pageData.NumMsgs.Value=getCount(w,r)
-	if r.Method != "GET" || r.URL.Path != "/" {
-		serve404(w)
-		return
-	}
 	c := appengine.NewContext(r)
 	u:=user.Current(c)
     pageData.U=u
 	if u==nil {
-		url,_:=user.LoginURL(c,"/")
-		pageData.Loginbar="<a href=\""+url+"\">Login with google</a>"
+//            session,_:=store.Get(r,"get_name_session")
+//            login,ok:=session.Values["login"].(string)
+            cookie,err:=r.Cookie("email") 
+
+            if err==nil {
+                url:="/logout"
+		pageData.Loginbar="Welcome,"+cookie.Value+"(<a href=\""+url+"\">Logout</a>)"
+            }else {
+		pageData.Loginbar="<a href=\"/login\">Login</a>|"
+		pageData.Loginbar+="<a  href=\"/register\" >Register</a>"
+//		pageData.Loginbar+="<a onclick=\"showLogin();\" href=\"#\" >Login with csnuts</a>"
+            }
 	} else {
 		url,_:=user.LogoutURL(c,"/")
 		pageData.Loginbar="Welcome,"+u.String()+"(<a href=\""+url+"\">Logout</a>)"
@@ -109,6 +117,9 @@ func init() {
 
 	http.HandleFunc("/", handleMainPage)
 	http.HandleFunc("/sign", handleSign)
+	http.HandleFunc("/login", handleMyLogin)
+	http.HandleFunc("/register/", handleMyRegister)
+	http.HandleFunc("/logout", handleMyLogout)
     http.HandleFunc("/comment",handleComment)
     http.HandleFunc("/tagquery/",handleTagQuery)
     http.HandleFunc("/tag/",handleTaggedMsgs)

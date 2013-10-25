@@ -1,0 +1,234 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AddFlash	github.com/gorilla/sessions/sessions.go	/^func (s *Session) AddFlash(value interface{}, vars ...string) {$/;"	f
+Article	csnuts/utils.go	/^type Article struct {$/;"	t
+BlockFunc	github.com/gorilla/securecookie/securecookie.go	/^func (s *SecureCookie) BlockFunc(f func([]byte) (cipher.Block, error)) *SecureCookie {$/;"	f
+Clear	github.com/gorilla/context/context.go	/^func Clear(r *http.Request) {$/;"	f
+ClearHandler	github.com/gorilla/context/context.go	/^func ClearHandler(h http.Handler) http.Handler {$/;"	f
+Codec	github.com/gorilla/securecookie/securecookie.go	/^type Codec interface {$/;"	t
+CodecsFromPairs	github.com/gorilla/securecookie/securecookie.go	/^func CodecsFromPairs(keyPairs ...[]byte) []Codec {$/;"	f
+Comment	csnuts/handleComment.go	/^type Comment struct {$/;"	t
+CookieStore	github.com/gorilla/sessions/store.go	/^type CookieStore struct {$/;"	t
+Count	csnuts/count.go	/^type Count struct {$/;"	t
+DeScript	csnuts/utils.go	/^func DeScript(s  string) string {$/;"	f
+DecCount	csnuts/count.go	/^func DecCount(w http.ResponseWriter, r* http.Request)int {$/;"	f
+Decode	github.com/gorilla/securecookie/securecookie.go	/^func (s *SecureCookie) Decode(name, value string, dst interface{}) error {$/;"	f
+DecodeMulti	github.com/gorilla/securecookie/securecookie.go	/^func DecodeMulti(name string, value string, dst interface{},$/;"	f
+Del	static/js/csnuts.js	/^    function Del(msgid) {$/;"	f
+Del	template/cn/header.html	/^        function Del(msgid) {$/;"	f
+Del	template/cn/msg.html	/^function Del(msgid) {$/;"	f
+Del	template/en/header.html	/^        function Del(msgid) {$/;"	f
+Del	template/en/msg.html	/^function Del(msgid) {$/;"	f
+Del	template/header.html	/^        function Del(msgid) {$/;"	f
+Del	template/msg.html	/^function Del(msgid) {$/;"	f
+Delete	github.com/gorilla/context/context.go	/^func Delete(r *http.Request, key interface{}) {$/;"	f
+DispNextPrev	static/js/csnuts.js	/^    function DispNextPrev() {$/;"	f
+DispNextPrev	template/cn/header.html	/^        function DispNextPrev() {$/;"	f
+DispNextPrev	template/en/header.html	/^        function DispNextPrev() {$/;"	f
+DispNextPrev	template/header.html	/^        function DispNextPrev() {$/;"	f
+Encode	github.com/gorilla/securecookie/securecookie.go	/^func (s *SecureCookie) Encode(name string, value interface{}) (string, error) {$/;"	f
+EncodeMulti	github.com/gorilla/securecookie/securecookie.go	/^func EncodeMulti(name string, value interface{},$/;"	f
+Error	github.com/gorilla/securecookie/securecookie.go	/^func (m MultiError) Error() string {$/;"	f
+Error	github.com/gorilla/sessions/sessions.go	/^func (m MultiError) Error() string {$/;"	f
+FilesystemStore	github.com/gorilla/sessions/store.go	/^type FilesystemStore struct {$/;"	t
+FlashMessage	github.com/gorilla/sessions/sessions_test.go	/^type FlashMessage struct {$/;"	t
+Flashes	github.com/gorilla/sessions/sessions.go	/^func (s *Session) Flashes(vars ...string) []interface{} {$/;"	f
+Flush	github.com/gorilla/sessions/sessions_test.go	/^func (rw *ResponseRecorder) Flush() {$/;"	f
+FooBar	github.com/gorilla/securecookie/securecookie_test.go	/^type FooBar struct {$/;"	t
+GenerateRandomKey	github.com/gorilla/securecookie/securecookie.go	/^func GenerateRandomKey(strength int) []byte {$/;"	f
+Get	github.com/gorilla/context/context.go	/^func Get(r *http.Request, key interface{}) interface{} {$/;"	f
+Get	github.com/gorilla/sessions/sessions.go	/^func (s *Registry) Get(store Store, name string) (session *Session, err error) {$/;"	f
+Get	github.com/gorilla/sessions/store.go	/^func (s *CookieStore) Get(r *http.Request, name string) (*Session, error) {$/;"	f
+Get	github.com/gorilla/sessions/store.go	/^func (s *FilesystemStore) Get(r *http.Request, name string) (*Session, error) {$/;"	f
+GetMyKey	github.com/gorilla/context/doc.go	/^	func GetMyKey(r *http.Request) SomeType {$/;"	f
+GetRegistry	github.com/gorilla/sessions/sessions.go	/^func GetRegistry(r *http.Request) *Registry {$/;"	f
+GetTaggedMsgs	csnuts/handleTag.go	/^func GetTaggedMsgs(w http.ResponseWriter, r * http.Request) {$/;"	f
+Good	static/js/csnuts.js	/^    function Good(msgid) {$/;"	f
+Good	template/cn/header.html	/^        function Good(msgid) {$/;"	f
+Good	template/cn/msg.html	/^function Good(msgid) {$/;"	f
+Good	template/en/header.html	/^        function Good(msgid) {$/;"	f
+Good	template/en/msg.html	/^function Good(msgid) {$/;"	f
+Good	template/header.html	/^        function Good(msgid) {$/;"	f
+Good	template/msg.html	/^function Good(msgid) {$/;"	f
+HashFunc	github.com/gorilla/securecookie/securecookie.go	/^func (s *SecureCookie) HashFunc(f func() hash.Hash) *SecureCookie {$/;"	f
+Header	github.com/gorilla/sessions/sessions_test.go	/^func (rw *ResponseRecorder) Header() http.Header {$/;"	f
+MaxAge	github.com/gorilla/securecookie/securecookie.go	/^func (s *SecureCookie) MaxAge(value int) *SecureCookie {$/;"	f
+MaxLength	github.com/gorilla/securecookie/securecookie.go	/^func (s *SecureCookie) MaxLength(value int) *SecureCookie {$/;"	f
+Message	csnuts/utils.go	/^type Message struct {$/;"	t
+MinAge	github.com/gorilla/securecookie/securecookie.go	/^func (s *SecureCookie) MinAge(value int) *SecureCookie {$/;"	f
+Msg2Art	csnuts/utils.go	/^func Msg2Art(m *Message) *Article {$/;"	f
+Msgs2Arts	csnuts/utils.go	/^func Msgs2Arts(ms []*Message) []*Article {$/;"	f
+MultiError	github.com/gorilla/securecookie/securecookie.go	/^type MultiError []error$/;"	t
+MultiError	github.com/gorilla/sessions/sessions.go	/^type MultiError []error$/;"	t
+MyHandler	github.com/gorilla/context/doc.go	/^	func MyHandler(w http.ResponseWriter, r *http.Request) {$/;"	f
+MyHandler	github.com/gorilla/sessions/doc.go	/^	func MyHandler(w http.ResponseWriter, r *http.Request) {$/;"	f
+Name	github.com/gorilla/sessions/sessions.go	/^func (s *Session) Name() string {$/;"	f
+New	github.com/gorilla/securecookie/securecookie.go	/^func New(hashKey, blockKey []byte) *SecureCookie {$/;"	f
+New	github.com/gorilla/sessions/store.go	/^func (s *CookieStore) New(r *http.Request, name string) (*Session, error) {$/;"	f
+New	github.com/gorilla/sessions/store.go	/^func (s *FilesystemStore) New(r *http.Request, name string) (*Session, error) {$/;"	f
+NewCookie	github.com/gorilla/sessions/sessions.go	/^func NewCookie(name, value string, options *Options) *http.Cookie {$/;"	f
+NewCookieStore	github.com/gorilla/sessions/store.go	/^func NewCookieStore(keyPairs ...[]byte) *CookieStore {$/;"	f
+NewFilesystemStore	github.com/gorilla/sessions/store.go	/^func NewFilesystemStore(path string, keyPairs ...[]byte) *FilesystemStore {$/;"	f
+NewRecorder	github.com/gorilla/sessions/sessions_test.go	/^func NewRecorder() *ResponseRecorder {$/;"	f
+NewSession	github.com/gorilla/sessions/sessions.go	/^func NewSession(store Store, name string) *Session {$/;"	f
+Next	static/js/csnuts.js	/^    function Next() {$/;"	f
+Next	template/cn/header.html	/^        function Next() {$/;"	f
+Next	template/en/header.html	/^        function Next() {$/;"	f
+Next	template/header.html	/^        function Next() {$/;"	f
+Options	github.com/gorilla/sessions/sessions.go	/^type Options struct {$/;"	t
+Prev	static/js/csnuts.js	/^    function Prev() {$/;"	f
+Prev	template/cn/header.html	/^        function Prev() {$/;"	f
+Prev	template/en/header.html	/^        function Prev() {$/;"	f
+Prev	template/header.html	/^        function Prev() {$/;"	f
+Purge	github.com/gorilla/context/context.go	/^func Purge(maxAge int) int {$/;"	f
+ReadCookieHandler	github.com/gorilla/securecookie/doc.go	/^	func ReadCookieHandler(w http.ResponseWriter, r *http.Request) {$/;"	f
+Registry	github.com/gorilla/sessions/sessions.go	/^type Registry struct {$/;"	t
+ResizeTextarea	static/js/csnuts.js	/^    function ResizeTextarea() {$/;"	f
+ResizeTextarea	template/cn/header.html	/^        function ResizeTextarea() {$/;"	f
+ResizeTextarea	template/cn/msg.html	/^function ResizeTextarea(id) {$/;"	f
+ResizeTextarea	template/en/header.html	/^        function ResizeTextarea() {$/;"	f
+ResizeTextarea	template/en/msg.html	/^function ResizeTextarea(id) {$/;"	f
+ResizeTextarea	template/header.html	/^        function ResizeTextarea() {$/;"	f
+ResizeTextarea	template/msg.html	/^function ResizeTextarea(id) {$/;"	f
+ResponseRecorder	github.com/gorilla/sessions/sessions_test.go	/^type ResponseRecorder struct {$/;"	t
+Save	github.com/gorilla/sessions/sessions.go	/^func (s *Registry) Save(w http.ResponseWriter) error {$/;"	f
+Save	github.com/gorilla/sessions/sessions.go	/^func (s *Session) Save(r *http.Request, w http.ResponseWriter) error {$/;"	f
+Save	github.com/gorilla/sessions/sessions.go	/^func Save(r *http.Request, w http.ResponseWriter) error {$/;"	f
+Save	github.com/gorilla/sessions/store.go	/^func (s *CookieStore) Save(r *http.Request, w http.ResponseWriter,$/;"	f
+Save	github.com/gorilla/sessions/store.go	/^func (s *FilesystemStore) Save(r *http.Request, w http.ResponseWriter,$/;"	f
+SecureCookie	github.com/gorilla/securecookie/securecookie.go	/^type SecureCookie struct {$/;"	t
+Session	github.com/gorilla/sessions/sessions.go	/^type Session struct {$/;"	t
+Set	github.com/gorilla/context/context.go	/^func Set(r *http.Request, key, val interface{}) {$/;"	f
+SetCookieHandler	github.com/gorilla/securecookie/doc.go	/^	func SetCookieHandler(w http.ResponseWriter, r *http.Request) {$/;"	f
+SetMyKey	github.com/gorilla/context/doc.go	/^	func SetMyKey(r *http.Request, val SomeType) {$/;"	f
+Site	csnuts/csnuts.go	/^\/\/var Site string="http:\/\/www.csnuts.com"$/;"	v
+Site	csnuts/csnuts.go	/^var Site string="http:\/\/www.csnuts.com"$/;"	v
+Store	github.com/gorilla/sessions/sessions.go	/^func (s *Session) Store() Store {$/;"	f
+Store	github.com/gorilla/sessions/store.go	/^type Store interface {$/;"	t
+SubstrByByte	csnuts/utils.go	/^func SubstrByByte(str string, length int) string {$/;"	f
+Tag	csnuts/handleTag.go	/^type Tag struct {$/;"	t
+TagCount	csnuts/csnuts.go	/^type TagCount struct {$/;"	t
+TestAuthentication	github.com/gorilla/securecookie/securecookie_test.go	/^func TestAuthentication(t *testing.T) {$/;"	f
+TestContext	github.com/gorilla/context/context_test.go	/^func TestContext(t *testing.T) {$/;"	f
+TestCustomType	github.com/gorilla/securecookie/securecookie_test.go	/^func TestCustomType(t *testing.T) {$/;"	f
+TestEncoding	github.com/gorilla/securecookie/securecookie_test.go	/^func TestEncoding(t *testing.T) {$/;"	f
+TestEncription	github.com/gorilla/securecookie/securecookie_test.go	/^func TestEncription(t *testing.T) {$/;"	f
+TestFlashes	github.com/gorilla/sessions/sessions_test.go	/^func TestFlashes(t *testing.T) {$/;"	f
+TestMultiError	github.com/gorilla/securecookie/securecookie_test.go	/^func TestMultiError(t *testing.T) {$/;"	f
+TestSecureCookie	github.com/gorilla/securecookie/securecookie_test.go	/^func TestSecureCookie(t *testing.T) {$/;"	f
+TestSerialization	github.com/gorilla/securecookie/securecookie_test.go	/^func TestSerialization(t *testing.T) {$/;"	f
+User	csnuts/handleMySign.go	/^type User struct {$/;"	t
+Write	github.com/gorilla/sessions/sessions_test.go	/^func (rw *ResponseRecorder) Write(buf []byte) (int, error) {$/;"	f
+WriteHeader	github.com/gorilla/sessions/sessions_test.go	/^func (rw *ResponseRecorder) WriteHeader(code int) {$/;"	f
+a	static/js/prettify/lang-clj.js	/^var a=null;$/;"	v
+a	static/js/prettify/lang-lisp.js	/^var a=null;$/;"	v
+a	static/js/prettify/lang-n.js	/^var a=null;$/;"	v
+a	static/js/prettify/lang-yaml.js	/^var a=null;$/;"	v
+articlePage	csnuts/csnuts.go	/^type articlePage struct {$/;"	t
+badAuthor	csnuts/checkSign.go	/^func badAuthor(str string) bool {$/;"	f
+badComment	csnuts/checkSign.go	/^func badComment(str string) bool {$/;"	f
+badContent	csnuts/checkSign.go	/^func badContent(str string) bool {$/;"	f
+badRequest	csnuts/serverstatus.go	/^func badRequest(w http.ResponseWriter,s string ) {$/;"	f
+badTag	csnuts/checkSign.go	/^func badTag(str string) bool {$/;"	f
+badTitle	csnuts/checkSign.go	/^func badTitle(str string) bool {$/;"	f
+blockKey	github.com/gorilla/securecookie/doc.go	/^	var blockKey = []byte("a-lot-secret")$/;"	v
+blockKey	github.com/gorilla/securecookie/securecookie.go	/^		var blockKey []byte$/;"	v
+can	github.com/gorilla/context/doc.go	/^Any type can be stored in the context. To enforce a given type, make the key$/;"	t
+clear	github.com/gorilla/context/context.go	/^func clear(r *http.Request) {$/;"	f
+codeStart	csnuts/utils.go	/^\/\/    var codeStart int$/;"	v
+contextKey	github.com/gorilla/sessions/sessions.go	/^type contextKey int$/;"	t
+cookies	github.com/gorilla/sessions/sessions_test.go	/^	var cookies []string$/;"	v
+createMac	github.com/gorilla/securecookie/securecookie.go	/^func createMac(h hash.Hash, value []byte) []byte {$/;"	f
+decode	github.com/gorilla/securecookie/securecookie.go	/^func decode(value []byte) ([]byte, error) {$/;"	f
+decrypt	github.com/gorilla/securecookie/securecookie.go	/^func decrypt(block cipher.Block, value []byte) ([]byte, error) {$/;"	f
+deserialize	github.com/gorilla/securecookie/securecookie.go	/^func deserialize(src []byte, dst interface{}) error {$/;"	f
+e	static/js/prettify/prettify.js	/^(function(){function L(a){function m(a){var f=a.charCodeAt(0);if(f!==92)return f;var b=a.charAt(1);return(f=r[b])?f:"0"<=b&&b<="7"?parseInt(a.substring(1),8):b==="u"||b==="x"?parseInt(a.substring(2),16):a.charCodeAt(1)}function e(a){if(a<32)return(a<16?"\\\\x0":"\\\\x")+a.toString(16);a=String.fromCharCode(a);if(a==="\\\\"||a==="-"||a==="["||a==="]")a="\\\\"+a;return a}function h(a){for(var f=a.substring(1,a.length-1).match(\/\\\\u[\\dA-Fa-f]{4}|\\\\x[\\dA-Fa-f]{2}|\\\\[0-3][0-7]{0,2}|\\\\[0-7]{1,2}|\\\\[\\S\\s]|[^\\\\]\/g),a=$/;"	f
+encode	github.com/gorilla/securecookie/securecookie.go	/^func encode(value []byte) []byte {$/;"	f
+encrypt	github.com/gorilla/securecookie/securecookie.go	/^func encrypt(block cipher.Block, value []byte) ([]byte, error) {$/;"	f
+encrypted	github.com/gorilla/securecookie/securecookie_test.go	/^	var encrypted, decrypted []byte$/;"	v
+err	github.com/gorilla/securecookie/securecookie.go	/^	var err error$/;"	v
+err	github.com/gorilla/sessions/sessions_test.go	/^	var err error$/;"	v
+err	github.com/gorilla/sessions/store.go	/^	var err error$/;"	v
+errMulti	github.com/gorilla/sessions/sessions.go	/^	var errMulti MultiError$/;"	v
+errors	github.com/gorilla/securecookie/securecookie.go	/^	var errors MultiError$/;"	v
+fdata	github.com/gorilla/sessions/store.go	/^	var fdata []byte$/;"	v
+fileMutex	github.com/gorilla/sessions/store.go	/^var fileMutex sync.RWMutex$/;"	v
+flashes	github.com/gorilla/sessions/sessions.go	/^	var flashes []interface{}$/;"	v
+flashes	github.com/gorilla/sessions/sessions_test.go	/^	var flashes []interface{}$/;"	v
+getComment	csnuts/handleComment.go	/^func getComment(r *http.Request,id int64) *Comment {$/;"	f
+getCount	csnuts/count.go	/^func getCount(w http.ResponseWriter, r* http.Request)int {$/;"	f
+getIDsByTag	csnuts/handleTag.go	/^func getIDsByTag(r *http.Request,tagstring string) []int64 {$/;"	f
+getMessage	csnuts/handleMsg.go	/^func getMessage(r *http.Request,id int64) *Message {$/;"	f
+h	static/js/prettify/prettify.js	/^(function(){function L(a){function m(a){var f=a.charCodeAt(0);if(f!==92)return f;var b=a.charAt(1);return(f=r[b])?f:"0"<=b&&b<="7"?parseInt(a.substring(1),8):b==="u"||b==="x"?parseInt(a.substring(2),16):a.charCodeAt(1)}function e(a){if(a<32)return(a<16?"\\\\x0":"\\\\x")+a.toString(16);a=String.fromCharCode(a);if(a==="\\\\"||a==="-"||a==="["||a==="]")a="\\\\"+a;return a}function h(a){for(var f=a.substring(1,a.length-1).match(\/\\\\u[\\dA-Fa-f]{4}|\\\\x[\\dA-Fa-f]{2}|\\\\[0-3][0-7]{0,2}|\\\\[0-7]{1,2}|\\\\[\\S\\s]|[^\\\\]\/g),a=$/;"	f
+handleComment	csnuts/handleComment.go	/^func handleComment(w http.ResponseWriter, r *http.Request) {$/;"	f
+handleMainPage	csnuts/csnuts.go	/^func handleMainPage(w http.ResponseWriter, r *http.Request) {$/;"	f
+handleMsg	csnuts/handleMsg.go	/^func handleMsg(w http.ResponseWriter, r *http.Request) {$/;"	f
+handleMsgDelete	csnuts/handleMsg.go	/^func handleMsgDelete(w http.ResponseWriter, r *http.Request) {$/;"	f
+handleMsgGood	csnuts/handleMsg.go	/^func handleMsgGood(w http.ResponseWriter, r *http.Request) {$/;"	f
+handleMsgQuery	csnuts/handleMsg.go	/^func handleMsgQuery(w http.ResponseWriter, r *http.Request) {$/;"	f
+handleMyLogin	csnuts/handleMySign.go	/^func handleMyLogin(w http.ResponseWriter, r *http.Request) {$/;"	f
+handleMyLogout	csnuts/handleMySign.go	/^func handleMyLogout(w http.ResponseWriter, r *http.Request) {$/;"	f
+handleMyRegister	csnuts/handleMySign.go	/^func handleMyRegister(w http.ResponseWriter, r *http.Request) {$/;"	f
+handleSign	csnuts/handleSign.go	/^func handleSign(w http.ResponseWriter, r *http.Request) {$/;"	f
+handleTagQuery	csnuts/handleTag.go	/^func handleTagQuery(w http.ResponseWriter, r *http.Request) {$/;"	f
+handleTagQueryReturn	csnuts/handleTag.go	/^func handleTagQueryReturn(w http.ResponseWriter, r *http.Request,tag string,next int) []*Message {$/;"	f
+handleTaggedMsgs	csnuts/handleTag.go	/^func handleTaggedMsgs(w http.ResponseWriter, r * http.Request) {$/;"	f
+hashKey	github.com/gorilla/securecookie/doc.go	/^	var hashKey = []byte("very-secret")$/;"	v
+hdr	github.com/gorilla/sessions/sessions_test.go	/^	var hdr http.Header$/;"	v
+init	csnuts/csnuts.go	/^func init() {$/;"	f
+init	csnuts/handleMySign.go	/^func init() {$/;"	f
+init	github.com/gorilla/sessions/sessions.go	/^func init() {$/;"	f
+init	github.com/gorilla/sessions/sessions_test.go	/^func init() {$/;"	f
+insertComment	csnuts/handleComment.go	/^func insertComment(r *http.Request,cmt *Comment) *datastore.Key {$/;"	f
+insertMessage	csnuts/handleMsg.go	/^func insertMessage(r *http.Request,m *Message) *datastore.Key {$/;"	f
+is	github.com/gorilla/context/doc.go	/^type is interface{} so a key can be of any type that supports equality.$/;"	t
+isLegal	csnuts/handleMySign.go	/^func (u * User) isLegal() (b bool, errString string) {$/;"	f
+isRegularDomain	csnuts/handleMySign.go	/^func isRegularDomain(domain string) (b bool) {$/;"	f
+isRegularEmail	csnuts/handleMySign.go	/^func isRegularEmail(email string) (b bool) {$/;"	f
+isRegularIntro	csnuts/handleMySign.go	/^func isRegularIntro(intro string) (b bool) {$/;"	f
+isRegularNickname	csnuts/handleMySign.go	/^func isRegularNickname(nickname string) (b bool) {$/;"	f
+isRegularPassword	csnuts/handleMySign.go	/^func isRegularPassword(password string) (b bool) {$/;"	f
+key	github.com/gorilla/context/doc.go	/^	type key int$/;"	t
+keyType	github.com/gorilla/context/context_test.go	/^type keyType int$/;"	t
+listPage	csnuts/csnuts.go	/^type listPage struct {$/;"	t
+load	github.com/gorilla/sessions/store.go	/^func (s *FilesystemStore) load(session *Session) error {$/;"	f
+msgs	csnuts/handleMsg.go	/^	var msgs []*Message$/;"	v
+msgs	csnuts/handleTag.go	/^	var msgs []*Message$/;"	v
+ok	github.com/gorilla/sessions/sessions_test.go	/^	var ok bool$/;"	v
+pageData	csnuts/csnuts.go	/^	var pageData listPage$/;"	v
+pageData	csnuts/handleMsg.go	/^	var pageData articlePage$/;"	v
+pageData	csnuts/handleTag.go	/^	var pageData listPage$/;"	v
+pre	csnuts/utils.go	/^\/\/    var pre bool$/;"	v
+prev	static/js/csnuts.js	/^    var prev=false;$/;"	v
+processCmtContent	csnuts/utils.go	/^func processCmtContent(m *Comment) {$/;"	f
+processMsgContent	csnuts/utils.go	/^func processMsgContent(m *Message) {$/;"	f
+putComment	csnuts/handleComment.go	/^func putComment(r *http.Request,id int64,cmt *Comment) bool {$/;"	f
+putMessage	csnuts/handleMsg.go	/^func putMessage(r *http.Request,id int64,m *Message) bool {$/;"	f
+putMsgTags	csnuts/handleTag.go	/^func putMsgTags(r *http.Request,id int64,tags []string) bool {$/;"	f
+q	static/js/prettify/prettify.js	/^var q=null;window.PR_SHOULD_USE_CONTINUATION=!0;$/;"	v
+registerForm	csnuts/handleMySign.go	/^func registerForm() string{$/;"	f
+req	github.com/gorilla/sessions/sessions_test.go	/^	var req *http.Request$/;"	v
+rsp	github.com/gorilla/sessions/sessions_test.go	/^	var rsp *ResponseRecorder$/;"	v
+save	github.com/gorilla/sessions/store.go	/^func (s *FilesystemStore) save(session *Session) error {$/;"	f
+serialize	github.com/gorilla/securecookie/securecookie.go	/^func serialize(src interface{}) ([]byte, error) {$/;"	f
+serve404	csnuts/serverstatus.go	/^func serve404(w http.ResponseWriter) {$/;"	f
+serveError	csnuts/serverstatus.go	/^func serveError(c appengine.Context, w http.ResponseWriter, err error) {$/;"	f
+session	github.com/gorilla/sessions/sessions_test.go	/^	var session *Session$/;"	v
+sessionInfo	github.com/gorilla/sessions/sessions.go	/^type sessionInfo struct {$/;"	t
+setCount	csnuts/count.go	/^func setCount(w http.ResponseWriter, r* http.Request)int {$/;"	f
+setEmailCookie	csnuts/handleMySign.go	/^func setEmailCookie(w http.ResponseWriter, email string) bool {$/;"	f
+showLogin	template/header.html	/^		function showLogin() {$/;"	f
+store	github.com/gorilla/sessions/doc.go	/^	var store = sessions.NewCookieStore($/;"	v
+store	github.com/gorilla/sessions/doc.go	/^	var store = sessions.NewCookieStore([]byte("something-very-secret"))$/;"	v
+t1	github.com/gorilla/securecookie/securecookie.go	/^	var t1 int64$/;"	v
+templatePath	csnuts/csnuts.go	/^var templatePath string="template\/cn\/"$/;"	v
+testCookies	github.com/gorilla/securecookie/securecookie_test.go	/^var testCookies = []interface{}{$/;"	v
+testStrings	github.com/gorilla/securecookie/securecookie_test.go	/^var testStrings = []string{"foo", "bar", "baz"}$/;"	v
+timestamp	github.com/gorilla/securecookie/securecookie.go	/^func (s *SecureCookie) timestamp() int64 {$/;"	f
+to	github.com/gorilla/context/doc.go	/^Here we define a key using a custom int type to avoid name collisions:$/;"	t
+used	github.com/gorilla/sessions/sessions.go	/^\/\/ contextKey is the type used to store the registry in the context.$/;"	t
+verifyMac	github.com/gorilla/securecookie/securecookie.go	/^func verifyMac(h hash.Hash, value []byte, mac []byte) error {$/;"	f
