@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>CSNUTS 发帖</title>
+<meta charset="UTF-8" />
+<link rel="stylesheet" type="text/css" href="static/login/reset.css">
+<link rel="stylesheet" type="text/css" href="static/login/structure.css">
+<script type="text/javascript">
+//输入框自动增高
+function ResizeTextarea() {
+	var t=document.getElementById("newctnt");
+	var h=t.scrollHeight;
+	h=h>280?365:280;
+	t.style.height=h+"px";
+}
+</script>
+</head>
+
+<body>
+<!--sign -->
+<div id="postform">
+	<form class="box post" action="/post" method="post">
+		<fieldset class="boxBody">
+			
+		<label>标题:</label><input id="newtitle" name="title" rows="1" ></input>
+		<div class="textinput"><label>内容:</label><textarea id="newctnt" name="content" onpropertychange="ResizeTextarea()" oninput="ResizeTextarea()" onkeyup="ResizeTextarea()" ></textarea></div>
+		<div class="textinput"><label>标签:</label><input name="tags" rows="1" ></input></div>
+		{{with .U }}		
+		<div class="textinput"><label>作者:</label><input name="author" rows="1"  value="{{.U.String}}"></input></div>
+		{{else}}
+		<div class="textinput"><label>作者:</label><input name="author" rows="1" value="{{.UserName}}" ></input></div>
+		{{end}}
+		</fieldset>
+		<footer>
+		<input class="btnLogin" type="submit" value="发布">
+		</footer>
+	</form>
+</div>
+<!--end sign-->
+<footer id="main">
+  <a href="http://wwww.csnuts.com">WWW.CSNUTS.com</a> | <a href="http://www.usr.cc">WWW.USR.CC</a>
+</footer>
+</body>
+</html>

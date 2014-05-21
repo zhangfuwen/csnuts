@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>CSNUTS Signup</title>
+<meta charset="UTF-8" />
+<link rel="stylesheet" type="text/css" href="/static/login/reset.css">
+<link rel="stylesheet" type="text/css" href="/static/login/structure.css">
+<script type="text/javascript" src="/static/login/password_check.js"></script>
+</head>
+
+<body>
+<form class="box login" action="/register" method="POST">
+	<fieldset class="boxBody">
+	  <label>Username<img id="email_valid" src="" alt=""></label>
+	  <input id="email" name="email" type="text" tabindex="1" placeholder="Email" onchange="if_email_valid()" required>
+	  <label>Password<img id="password_valid" src="" alt=""></label>
+	  <input id="password" name="password" type="password" onchange="if_password_valid()" tabindex="2" required>
+	  <label>Input your password again.<img id="accept" src="" alt="" ></label>
+	  <input id="password1" name="password1" type="password" onchange="if_password_consistent()" tabindex="3"  required>
+	</fieldset>
+	<footer>
+	  <label><input type="checkbox" tabindex="3">Keep me logged in</label>
+	  <input type="submit" class="btnLogin" value="Login" tabindex="4">
+	</footer>
+	<div id="errormsg">{{.Errormsg}}</div>
+</form>
+<footer id="main">
+  <a href="http://wwww.csnuts.com">WWW.CSNUTS.com</a> | <a href="http://www.usr.cc">WWW.USR.CC</a>
+</footer>
+</body>
+</html>

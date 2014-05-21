@@ -82,13 +82,6 @@
                }
             });
         }
-        //输入框自动增高
-        function ResizeTextarea() {
-            var t=document.getElementById("newctnt");
-            var h=t.scrollHeight;
-            h=h>110?465:100;
-            t.style.height=h+"px";
-        }
 //delete
 function Del(msgid) {
 	$.ajax({
@@ -140,18 +133,4 @@ function ResizeTextarea(id) {
         </div>
         <!-- content start -->
         <div id="content">
-            <!--sign -->
-            <div id="postform">
-                <form action="/sign" method="post">
-                    <div class="textinput"><label>标题(100):</label><input id="newtitle" name="title" rows="1" ></input></div>
-                    <div class="textinput"><label>内容(10K):</label><textarea id="newctnt" name="content" onpropertychange="ResizeTextarea()" oninput="ResizeTextarea()" onkeyup="ResizeTextarea()" ></textarea></div>
-                    <div class="textinput"><label>标签(80B):</label><input name="tags" rows="1" ></input></div>
-                    {{with .U }}{{else}}
-                    <div class="textinput"><label>作者(50B):</label><input name="author" rows="1" ></input></div>
-                    {{end}}
-                    <hr>
-					<div id="submit"><button id="butsubmit" type="submit" value="发布">发布</button></div>
-                </form>
-            </div>
-            <!--end sign-->
 {{end}}

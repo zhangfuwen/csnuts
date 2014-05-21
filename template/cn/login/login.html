@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>CSNUTS Login</title>
+<meta charset="UTF-8" />
+<link rel="stylesheet" type="text/css" href="static/login/reset.css">
+<link rel="stylesheet" type="text/css" href="static/login/structure.css">
+</head>
+
+<body>
+<form class="box login" action="/login" method="POST">
+	<fieldset class="boxBody">
+	  <label>Username</label>
+	  <input id="email" name="email" type="text" tabindex="1" placeholder="Email" required>
+	  <label><a href="#" class="rLink" tabindex="5">Forget your password?</a>Password</label>
+	  <input id="password" name="password" type="password" tabindex="2" required>
+	</fieldset>
+	<footer>
+	  <label><input type="checkbox" tabindex="3">Keep me logged in</label>
+	  <input type="submit" class="btnLogin" value="Login" tabindex="4">
+	</footer>
+	<div id="errormsg">{{.Errormsg}}</div>
+</form>
+<footer id="main">
+  <a href="http://wwww.csnuts.com">WWW.CSNUTS.com</a> | <a href="http://www.usr.cc">WWW.USR.CC</a>
+</footer>
+</body>
+</html>
